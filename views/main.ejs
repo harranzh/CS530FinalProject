@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DictiornaryMainPage</title>
+    <style>
+
+        body {
+            margin:0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: rgb(56, 54, 54);
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
+        li {
+            float: right;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover:not(.active) {
+            background-color: rgb(231, 219, 219);
+        }
+
+        .logoutbtn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 40px;
+            margin: 8px 8px;
+            border: none;
+            cursor: pointer;
+            opacity: 0.9;
+        }
+
+        .container {
+            padding: 100px;
+            margin-top: 30px;
+            background-color: white;
+        }
+
+        form.example input[type=text] {
+            padding: 22px;
+            font-size: 20px;
+            border: 1px solid grey;
+            float: left;
+            width: 80%;
+            background: #f1f1f1;
+        }
+
+        form.example button {
+            float: left;
+            width: 20%;
+            padding: 22px;
+            background: #2196F3;
+            color: white;
+            font-size: 20px;
+            border: 1px solid grey;
+            border-left: none;
+            cursor: pointer;
+        }
+
+        form.example button:hover {
+            background: #0b7dda;
+        }
+
+        form.example::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .errorMsg{
+            margin: 20px;
+            color: rgb(255, 0, 0)
+        }
+
+    </style>
+</head>
+<body>
+    <ul>
+        <li>
+            <form action="/logout?_method=DELETE" method="POST">
+                <button type="submit" class="logoutbtn">Log Out</button>
+            </form>
+        </li>
+    </ul>
+    <div class="container">
+        <h1 style="text-align: center">WELCOME TO MERRIAM-WEBSTER'S COLLEGIATE DICTIONARY</h1>
+        <form id="searchForm" class="example" action="/dict" method="GET">
+            <input type="text" name="definition" placeholder="Search..." id="input">
+            <button type="submit" <i class="fa fa-search"></i>Search</button>
+        </form>
+    </div>
+
+</body>
+</html>
