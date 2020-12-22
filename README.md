@@ -1,4 +1,4 @@
-# CS530FinalProject
+# CS530FinalProject: Merriam-Webster-Dictionary API
 
 -	My dictionary application is implemented with Node and Express js, the database used to store user information and data that has been searched by the user is MongoDB, with the use of Mongoose to model my application data. 
 
