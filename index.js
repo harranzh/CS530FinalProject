@@ -24,7 +24,7 @@ initializePassport(passport, email => {
 });
 
 // Mongoose Connection
-mongoose.connect('mongodb://localhost:27017/UsersDefinitions', { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify : true });
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/UsersDefinitions', { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify : true });
  
 app.set('views', path.join(__dirname, 'views'));
 app.set('view-engine', 'ejs');
@@ -136,6 +136,6 @@ function checkNotAuthenticated(req, res, next){
     next()
 }
 
-app.listen(process.env.PORT || 8001, function(){
-    console.log('Connected to localhost:8001');
+app.listen(process.env.PORT || 8000, function(){
+    console.log('Connected to localhost:8000');
 });
